@@ -1,0 +1,58 @@
+<app-navigation></app-navigation>
+<p class="h3 head-title">Управление лекциями</p>
+
+<div class="card card-body">
+  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+    <div class="error-text" *ngIf="name.errors?.required">
+      Введите заголовок
+    </div>
+    <div *ngIf="name.errors?.minlength">
+      Заголовок должен состоять минимум из одного символа
+    </div>
+  </div>
+
+  <label for="name">Заголовок</label>
+  <input id="name"
+         minlength="1"
+         [(ngModel)]="this.lecture.name"
+         class="form-control"
+         type="text"
+         required
+         #name="ngModel">
+  <br>
+
+  <div *ngIf="description.invalid && (description.dirty || description.touched)">
+    <div class="error-text" *ngIf="description.errors?.required">
+      Введите описание
+    </div>
+    <div *ngIf="description.errors?.minlength">
+      Описание должно состоять минимум из одного символа
+    </div>
+  </div>
+  <label for="description">Описание</label>
+  <input id="description"
+         required
+         minlength="1"
+         #description="ngModel"
+         [(ngModel)]="this.lecture.description"
+         class="form-control"
+         type="text">
+  <br>
+
+  <button class="btn btn-light" [disabled]="name.invalid || description.invalid" (click)="save()">Создать</button><br>
+</div>
+
+<div>
+  <div class="green-back" *ngFor="let l of lectures; index as i">
+    <div class="card card-body dark-green-back">
+    <span>{{l.name}} {{l.description}}
+      <span style="float: right">
+        <button class="btn btn-danger" style="margin-right: 10px" (click)="delete(l.id, i)">Удалить</button>
+        <button class="btn btn-info" style="margin-right: 10px" (click)="report(l.id)">Печать отчёта</button>
+        <a class="btn btn-warning" [routerLink]="['/lectures/manage/', l.id]" >Обновить</a>
+      </span>
+      </span>
+    </div>
+  </div>
+  <br>
+</div>
