@@ -20,6 +20,7 @@ import {UserEditComponent} from './user/user-edit/user-edit.component';
 import { LectureViewComponent } from './lecture/lecture-view/lecture-view.component';
 import { LectureViewDetailsComponent } from './lecture/lecture-view/lecture-view-details/lecture-view-details.component';
 import { CourseCategoryManagerComponent } from './course-category-manager/course-category-manager.component';
+import { CourseBuilderComponent } from './course-builder/course-builder.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CourseCategoryManagerComponent } from './course-category-manager/course
     UserEditComponent,
     LectureViewComponent,
     LectureViewDetailsComponent,
-    CourseCategoryManagerComponent
+    CourseCategoryManagerComponent,
+    CourseBuilderComponent
   ],
   imports: [
     BrowserModule,

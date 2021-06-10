@@ -3,4 +3,29 @@
 <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Управление категориями</h1>
   <p class="lead">Добавление, удаление изменение категориями курсов</p>
+
+  <h3 class="display-4">Добавить</h3>
+</div>
+
+<div class="form-group mb-3">
+  <label class="text-left" for="name">Название</label>
+  <input [(ngModel)]="category.name" type="text" class="form-control" id="name" placeholder="Название">
+  <label for="description">Описание</label>
+  <input [(ngModel)]="category.description" type="text" class="form-control" id="description" placeholder="Описание">
+  <button (click)="save()" class="btn btn-info">Создать</button>
+</div>
+
+
+<div>
+  <div class="green-back" *ngFor="let c of categories; index as i">
+    <div class="card card-body dark-green-back">
+    <span>{{c.name}} {{c.description}}
+      <span style="float: right">
+        <button class="btn btn-danger" style="margin-right: 10px" (click)="delete(c.id, i)">Удалить</button>
+        <button class="btn btn-warning" (click)="update(c.id)">Обновить</button>
+      </span>
+      </span>
+    </div>
+  </div>
+  <br>
 </div>

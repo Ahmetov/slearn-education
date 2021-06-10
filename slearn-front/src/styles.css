@@ -60,3 +60,35 @@ nav {
   color: #b40d00;
   font-weight: bold;
 }
+
+
+/* Style buttons */
+.profile-btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.profile-btn:hover {
+  background-color: RoyalBlue;
+}
+
+.dropdown-text li a {
+  color: black !important;
+}
+
+.dropdown-text li a:visited {
+  color: black !important;
+}
+
+.dropdown-text li a:hover {
+  color: black !important;
+}
+
+.dropdown-text li a:active {
+  color: black !important;
+}

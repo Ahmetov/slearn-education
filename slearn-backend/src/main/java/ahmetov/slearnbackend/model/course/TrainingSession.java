@@ -13,4 +13,8 @@ public class TrainingSession {
 
     @OneToMany(mappedBy = "trainingSession")
     private List<TrainingSessionPart> trainingSessionParts;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
 }

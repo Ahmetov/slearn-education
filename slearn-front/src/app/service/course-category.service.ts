@@ -5,7 +5,7 @@ import {Lecture} from "../model/lecture";
 import {environment} from "../../environments/environment";
 import {CourseCategory} from "../model/course.category";
 
-const URL = `${environment.apiUrl} + /lectures`;
+const URL = `${environment.apiUrl}/course-category`;
 
 @Injectable({
   providedIn: 'root'

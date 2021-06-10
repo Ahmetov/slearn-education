@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CourseCategoryService} from "../service/course-category.service";
+import {CourseCategory} from "../model/course.category";
 
 @Component({
   selector: 'app-cource-category-manager',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseCategoryManagerComponent implements OnInit {
 
-  constructor() { }
+  public category: CourseCategory = {description: "", name: ""};
+  public categories: CourseCategory[] = [];
+
+  constructor(private categoryService: CourseCategoryService) { }
 
   ngOnInit(): void {
+    this.categoryService.getAll().subscribe(data => {
+      this.categories = data;
+    }, error => {
+      console.log(error);
+    })
   }
 
+  save(): void {
+    this.categoryService.create(this.category).subscribe(resp => {
+      this.categories.push(this.category);
+    })
+  }
+
+  delete(id: number | undefined, i: number) {
+    if (id !== undefined) {
+    this.categoryService.delete(id).subscribe(resp => {
+      this.categories.splice(i, 1);
+    })}
+  }
+
+  update(id: number | undefined) {
+    if (id !== undefined) {
+
+    }
+  }
 }
