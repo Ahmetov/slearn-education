@@ -1,0 +1,33 @@
+<app-navigation></app-navigation>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Конструктор курса</h1>
+  <p class="lead">Создайте игровой курс, заполнив все необходимые формы</p>
+  <p class="lead">В случае недоделанного до конца курса, система сохранит прогресс создания</p>
+</div>
+
+<div class="form-group mb-3 card card-body green-back">
+  <label class="text-left" for="name">Название</label>
+  <input [(ngModel)]="course.name" type="text" class="form-control" id="name" placeholder="Название">
+  <label for="description">Описание</label>
+  <input [(ngModel)]="course.description" type="text" class="form-control" id="description" placeholder="Описание">
+  <label for="courseCategory">Категория курса</label>
+  <select class="form-control" id="courseCategory">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <label for="loadImage">Логотип курса (png)</label>
+  <input style="display: none" type="file"
+         (change)="onFileSelected($event)"
+         class="form-control-file"
+         id="loadImage"
+         #fileUpload>
+  <button mat-mini-fab color="warn" class="upload-btn"
+          (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+  <button (click)="save()" class="btn btn-info">Создать</button>
+  <button (click)="saveFile()" class="btn btn-info">Создать файл</button>
+</div>

@@ -31,7 +31,7 @@ nav {
 }
 
 .green-back {
-  background: #f0f5f0;
+  background: #f0f5f0 !important;
   margin: 20px;
 }
 
@@ -91,4 +91,28 @@ nav {
 
 .dropdown-text li a:active {
   color: black !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  padding-bottom: 0 !important;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px !important;
+}
+
+.formatted-text-area {
+  white-space: pre-wrap;
+}
+
+pre {
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+  color: #fff !important;
+  text-indent: 0em !important;
 }

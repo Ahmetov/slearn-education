@@ -38,8 +38,13 @@ public class CourseCategoryServiceImpl implements CourseCategoryService {
     }
 
     @Override
+    @Transactional
     public void update(CourseCategory obj) {
-
+        if (obj.getId() != null && courseCategoryRepository.findById(obj.getId()).isPresent()) {
+            courseCategoryRepository.save(obj);
+        } else {
+            throw new NotFoundException("Лекции не существует");
+        }
     }
 
     @Override

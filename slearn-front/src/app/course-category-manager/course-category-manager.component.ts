@@ -23,6 +23,7 @@ export class CourseCategoryManagerComponent implements OnInit {
   }
 
   save(): void {
+    console.log(this.category.description);
     this.categoryService.create(this.category).subscribe(resp => {
       this.categories.push(this.category);
     })

@@ -36,7 +36,7 @@ public class LectureServiceImpl implements LectureService {
     @Override
     @Transactional
     public void update(Lecture lecture) {
-        if (lecture.getId() != null && lectureRepository.findAllById(lecture.getId()).isPresent()) {
+        if (lecture.getId() != null && lectureRepository.findById(lecture.getId()).isPresent()) {
             lectureRepository.save(lecture);
         } else {
             throw new NotFoundException("Лекции не существует");

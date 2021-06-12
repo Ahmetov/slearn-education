@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
-import {Router, RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {AuthComponent} from "./security/auth/auth.component";
 import {LectureComponent} from "./lecture/lecture.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
 import {RegistrationComponent} from "./security/registration/registration.component";
 import {UserComponent} from "./user/user.component";
 import {AuthGuardService} from "./helper/auth-guard.service";
@@ -10,6 +9,8 @@ import {LectureEditComponent} from "./lecture/lecture-edit/lecture-edit.componen
 import {LectureViewComponent} from "./lecture/lecture-view/lecture-view.component";
 import {LectureViewDetailsComponent} from "./lecture/lecture-view/lecture-view-details/lecture-view-details.component";
 import {CourseCategoryManagerComponent} from "./course-category-manager/course-category-manager.component";
+import {CourseManagerComponent} from "./course-manager/course-manager.component.";
+import {CourseBuilderComponent} from "./course-manager/course-builder/course-builder.component";
 
 const routes: Routes = [
   {path: 'login', component: AuthComponent},
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path: 'lectures', component: LectureViewComponent, canActivate: [AuthGuardService]},
   {path: 'lectures/:id', component: LectureViewDetailsComponent, canActivate: [AuthGuardService]},
   {path: 'category-manager', component: CourseCategoryManagerComponent, canActivate: [AuthGuardService]},
+  {path: 'course-manager', component: CourseManagerComponent, canActivate: [AuthGuardService]},
+  {path: 'course-builder', component: CourseBuilderComponent, canActivate: [AuthGuardService]},
   {path: '**', redirectTo: 'lectures', pathMatch: 'full'}
 ]
 
@@ -33,5 +36,4 @@ const routes: Routes = [
   ],
 })
 export class AppRoutingModule {
-
 }
