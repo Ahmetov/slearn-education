@@ -1,1 +1,136 @@
-<p>user-profile works!</p>
+<app-navigation></app-navigation>
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseOne">
+        <b>Мой профиль</b>
+      </button>
+    </h2>
+    <!--    Информация профиля-->
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+         aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center"><img
+                  src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                  width="150">
+                  <div class="mt-3">
+                    <h4>John Doe</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3"><h6 class="mb-0">Имя</h6></div>
+                  <div class="col-sm-9 text-secondary">Эмиль</div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3"><h6 class="mb-0">Фамилия</h6></div>
+                  <div class="col-sm-9 text-secondary">Ахметов</div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3"><h6 class="mb-0">Почта</h6></div>
+                  <div class="col-sm-9 text-secondary">email@email.com</div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <a class="btn btn-info">Редактировать профиль</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Конец-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTwo">
+        <b>Мои курсы</b>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+         aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <!--        Информация о курсах с картинками-->
+        <div>
+          <div class="card-body">
+            <mat-progress-bar
+              class="example-margin"
+              [color]="'primary'"
+              [mode]="'determinate'"
+              [value]="50"
+              [bufferValue]="50">
+            </mat-progress-bar>
+            <h3 class="card-title"><b>Основы программирования</b></h3>
+            <p class="card-text">Изучите основы программирования играючие основы
+              программирования играючие основы программирования
+              играючие основы программирования играючи</p>
+            <a class="btn btn-success">Просмотр</a>
+          </div>
+        </div>
+        <br>
+        <div>
+          <div class="card-body">
+            <h3 class="card-title"><b>Основы программирования</b></h3>
+            <p class="card-text">Изучите основы программирования играючие основы
+              программирования играючие основы программирования
+              играючие основы программирования играючи</p>
+            <a class="btn btn-success">Просмотр</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree">
+        <b>Мои достижения</b>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+         aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <!--        Награда с картинками-->
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://cdn.icon-icons.com/icons2/1603/PNG/512/awward-reward-medal-winner-win-badge_108516.png"
+            class="card-img-top" alt="победа">
+          <div class="card-body">
+            <h5 class="card-title">Победитель босса</h5>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img
+            src="https://cdn.icon-icons.com/icons2/1603/PNG/512/awward-reward-medal-winner-win-badge_108516.png"
+            class="card-img-top" alt="победа">
+          <div class="card-body">
+            <h5 class="card-title">Победитель босса</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

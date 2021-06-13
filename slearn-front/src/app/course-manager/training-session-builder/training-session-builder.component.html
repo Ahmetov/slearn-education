@@ -1,0 +1,22 @@
+<app-navigation></app-navigation>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Конструктор учбеного занятия</h1>
+  <p class="lead">Создайте учебные занятий вашего курса</p>
+</div>
+<div class="form-group mb-3 card card-body green-back">
+  <label class="text-left" for="name">Название</label>
+  <input [(ngModel)]="trainingSession.name" type="text" class="form-control" id="name" placeholder="Название">
+  <label for="description">Описание</label>
+  <input [(ngModel)]="trainingSession.description" type="text" class="form-control" id="description" placeholder="Описание">
+  <label for="loadImage">Логотип курса (png)</label>
+  <input style="display: none" type="file"
+         (change)="onFileSelected($event)"
+         class="form-control-file"
+         id="loadImage"
+         #fileUpload>
+  <button mat-mini-fab color="warn" class="upload-btn"
+          (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+  <a (click)="saveFile()" class="btn btn-info">Далее</a>
+</div>

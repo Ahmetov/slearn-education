@@ -31,9 +31,9 @@
                 type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         </button>
         <ul class="dropdown-text dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Профиль</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/user-profile']">Профиль</a></li>
           <li><a class="dropdown-item" href="#">Настройки</a></li>
-          <li><a class="dropdown-item" href="#">Выход</a></li>
+          <li><a class="dropdown-item" (click)="logout()">Выход</a></li>
         </ul>
       </div>
     </div>

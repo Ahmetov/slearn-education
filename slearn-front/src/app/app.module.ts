@@ -23,6 +23,9 @@ import { CourseCategoryManagerComponent } from './course-category-manager/course
 import { CourseManagerComponent } from './course-manager/course-manager.component.';
 import { CourseBuilderComponent } from './course-manager/course-builder/course-builder.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { TrainingSessionBuilderComponent } from './course-manager/training-session-builder/training-session-builder.component';
+import { TrainingSessionContentBuilderComponent } from './course-manager/training-session-content-builder/training-session-content-builder.component';
 
 @NgModule({
   declarations: [
@@ -40,17 +43,20 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     CourseCategoryManagerComponent,
     CourseManagerComponent,
     CourseBuilderComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TrainingSessionBuilderComponent,
+    TrainingSessionContentBuilderComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        MatProgressBarModule
+    ],
   providers: [authInterceptorProvider, authErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })

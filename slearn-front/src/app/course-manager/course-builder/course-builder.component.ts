@@ -3,6 +3,7 @@ import {Course} from "../../model/course";
 import {CourseService} from "../../service/course.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {FileFormatterService} from "../../service/file-formatter.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-course-builder',
@@ -15,7 +16,9 @@ export class CourseBuilderComponent implements OnInit {
   private fileName: string = "";
   private selectedFile: any = {};
 
-  constructor(private courseService: CourseService, private fileService: FileFormatterService) {
+  constructor(private courseService: CourseService,
+              private fileService: FileFormatterService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -28,6 +31,7 @@ export class CourseBuilderComponent implements OnInit {
     }
   }
 
+  //TODO если файл не выбран показывается ошибка
   saveFile() {
     const requestData = this.fileService.generateFormData(
       'course',
@@ -43,5 +47,6 @@ export class CourseBuilderComponent implements OnInit {
         }
       }
     );
+    this.router.navigate(['/training-session-builder'])
   }
 }

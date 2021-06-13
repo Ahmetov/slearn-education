@@ -19,8 +19,10 @@ export class FileFormatterService {
       new Blob([JSON.stringify(jsonData)],{
         type: "application/json"
       }));
-    uploadImageData.append('file', fileData, fileName);
+    if (fileName !== "") {
 
+      uploadImageData.append('file', fileData, fileName);
+    }
     return uploadImageData;
   }
 }

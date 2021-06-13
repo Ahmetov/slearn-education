@@ -11,7 +11,7 @@
   <label for="description">Описание</label>
   <input [(ngModel)]="course.description" type="text" class="form-control" id="description" placeholder="Описание">
   <label for="courseCategory">Категория курса</label>
-  <select class="form-control" id="courseCategory">
+  <select class="form-control" multiple id="courseCategory">
     <option>1</option>
     <option>2</option>
     <option>3</option>
@@ -28,5 +28,5 @@
           (click)="fileUpload.click()">
     <mat-icon>attach_file</mat-icon>
   </button>
-  <button (click)="saveFile()" class="btn btn-info">Создать</button>
+  <a (click)="saveFile()" class="btn btn-info">Далее</a>
 </div>

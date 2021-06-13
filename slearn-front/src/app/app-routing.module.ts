@@ -11,6 +11,9 @@ import {LectureViewDetailsComponent} from "./lecture/lecture-view/lecture-view-d
 import {CourseCategoryManagerComponent} from "./course-category-manager/course-category-manager.component";
 import {CourseManagerComponent} from "./course-manager/course-manager.component.";
 import {CourseBuilderComponent} from "./course-manager/course-builder/course-builder.component";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
+import {TrainingSessionBuilderComponent} from "./course-manager/training-session-builder/training-session-builder.component";
+import {TrainingSessionContentBuilderComponent} from "./course-manager/training-session-content-builder/training-session-content-builder.component";
 
 const routes: Routes = [
   {path: 'login', component: AuthComponent},
@@ -23,6 +26,9 @@ const routes: Routes = [
   {path: 'category-manager', component: CourseCategoryManagerComponent, canActivate: [AuthGuardService]},
   {path: 'course-manager', component: CourseManagerComponent, canActivate: [AuthGuardService]},
   {path: 'course-builder', component: CourseBuilderComponent, canActivate: [AuthGuardService]},
+  {path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuardService]},
+  {path: 'training-session-builder', component: TrainingSessionBuilderComponent, canActivate: [AuthGuardService]},
+  {path: 'training-session-content-builder', component: TrainingSessionContentBuilderComponent, canActivate: [AuthGuardService]},
   {path: '**', redirectTo: 'lectures', pathMatch: 'full'}
 ]
 
