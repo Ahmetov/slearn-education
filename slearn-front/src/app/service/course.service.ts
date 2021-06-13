@@ -18,8 +18,12 @@ export class CourseService {
     return this.http.get(URL);
   }
 
-  create(course: Course): Observable<any> {
-    return this.http.post<Course>(URL, course);
+  create(course: FormData): Observable<any> {
+    return this.http.post(
+      URL + '/file',
+      course, {
+        observe: 'response'
+      });
   }
 
   delete(id: number): Observable<any> {

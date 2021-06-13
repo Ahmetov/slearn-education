@@ -22,6 +22,7 @@ import { LectureViewDetailsComponent } from './lecture/lecture-view/lecture-view
 import { CourseCategoryManagerComponent } from './course-category-manager/course-category-manager.component';
 import { CourseManagerComponent } from './course-manager/course-manager.component.';
 import { CourseBuilderComponent } from './course-manager/course-builder/course-builder.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CourseBuilderComponent } from './course-manager/course-builder/course-b
     LectureViewDetailsComponent,
     CourseCategoryManagerComponent,
     CourseManagerComponent,
-    CourseBuilderComponent
+    CourseBuilderComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

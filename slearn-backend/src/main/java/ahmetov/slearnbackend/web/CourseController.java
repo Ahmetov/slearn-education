@@ -1,5 +1,6 @@
 package ahmetov.slearnbackend.web;
 
+import ahmetov.slearnbackend.model.course.Course;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,13 +11,10 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class CourseController {
 
-    @PostMapping
-    public void save() {
-
-    }
-
     @PostMapping(path = "/file", consumes = {"multipart/form-data"})
-    public void saveImage(@RequestParam("file") MultipartFile file) {
+    public void saveImage(
+            @RequestPart("course") Course course,
+            @RequestParam(name = "file", required = false) MultipartFile file) {
         System.out.println("something");
         System.out.println("something");
     }

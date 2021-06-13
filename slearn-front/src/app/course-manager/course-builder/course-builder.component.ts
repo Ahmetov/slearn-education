@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "../../model/course";
 import {CourseService} from "../../service/course.service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {FileFormatterService} from "../../service/file-formatter.service";
 
 @Component({
   selector: 'app-course-builder',
@@ -14,14 +15,10 @@ export class CourseBuilderComponent implements OnInit {
   private fileName: string = "";
   private selectedFile: any = {};
 
-  constructor(private courseService: CourseService, private http: HttpClient) {
+  constructor(private courseService: CourseService, private fileService: FileFormatterService) {
   }
 
   ngOnInit(): void {
-  }
-
-  save() {
-    this.courseService.create(this.course);
   }
 
   onFileSelected(event: any) {
@@ -32,16 +29,19 @@ export class CourseBuilderComponent implements OnInit {
   }
 
   saveFile() {
-    const uploadImageData = new FormData();
-    uploadImageData.append('file', <File>this.selectedFile, this.fileName);
-    this.http.post('http://localhost:8080/course/file', uploadImageData, {observe: 'response'})
-      .subscribe((response) => {
-          if (response.status === 200) {
-            console.log('Image uploaded successfully');
-          } else {
-            console.log('Image not uploaded successfully');
-          }
+    const requestData = this.fileService.generateFormData(
+      'course',
+      this.course,
+      this.selectedFile,
+      this.fileName)
+
+    this.courseService.create(requestData).subscribe((response) => {
+        if (response.status === 200) {
+          console.log('Image uploaded successfully');
+        } else {
+          console.log('Image not uploaded successfully');
         }
-      );
+      }
+    );
   }
 }
