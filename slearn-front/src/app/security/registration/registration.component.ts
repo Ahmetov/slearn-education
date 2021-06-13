@@ -11,13 +11,11 @@ import {Router} from "@angular/router";
 export class RegistrationComponent implements OnInit {
 
   public user: User = {
-    address: "",
     email: "",
     firstname: "",
     lastname: "",
     password: "",
     passwordRepeat: "",
-    phone: ""
   };
 
   constructor(private authService: AuthService, private router: Router) {

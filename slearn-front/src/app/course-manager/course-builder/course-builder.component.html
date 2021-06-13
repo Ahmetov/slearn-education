@@ -9,7 +9,8 @@
   <label class="text-left" for="name">Название</label>
   <input [(ngModel)]="course.name" type="text" class="form-control" id="name" placeholder="Название">
   <label for="description">Описание</label>
-  <input [(ngModel)]="course.description" type="text" class="form-control" id="description" placeholder="Описание">
+  <textarea [(ngModel)]="course.description" type="text" class="form-control" id="description" placeholder="Описание">
+  </textarea>
   <label for="courseCategory">Категория курса</label>
   <select class="form-control" multiple id="courseCategory">
     <option>1</option>
@@ -24,9 +25,9 @@
          class="form-control-file"
          id="loadImage"
          #fileUpload>
-  <button mat-mini-fab color="warn" class="upload-btn"
+  <button style="margin-bottom: 10px" mat-mini-fab color="warn" class="upload-btn"
           (click)="fileUpload.click()">
     <mat-icon>attach_file</mat-icon>
   </button>
-  <a (click)="saveFile()" class="btn btn-info">Далее</a>
+  <a (click)="saveFile()" class="btn btn-success">Далее</a>
 </div>

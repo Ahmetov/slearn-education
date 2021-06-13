@@ -28,6 +28,11 @@ public class UserController {
         return userService.getRolesOfCurrentUser();
     }
 
+    @GetMapping("/info")
+    public AppUser getCurrentUserInfo() {
+        return userService.getCurrentUserInfo();
+    }
+
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('admin')")
     public AppUser getById(@PathVariable Long id) {

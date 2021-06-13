@@ -23,7 +23,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 nav {
-  background-color: darkolivegreen !important;
+  background-color: #28a745 !important;
 }
 
 .container-fluid a {
@@ -36,7 +36,7 @@ nav {
 }
 
 .dark-green-back {
-  background: #305c37;
+  background: #28a745;
   color: whitesmoke;
 }
 /* login form */
@@ -64,17 +64,15 @@ nav {
 
 /* Style buttons */
 .profile-btn {
-  background-color: DodgerBlue; /* Blue background */
+  background-color: transparent ; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
 }
 
 /* Darker background on mouse-over */
 .profile-btn:hover {
-  background-color: RoyalBlue;
+  background-color: transparent;
 }
 
 .dropdown-text li a {
@@ -113,6 +111,6 @@ body {
 
 pre {
   font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
-  color: #fff !important;
+  color: black !important;
   text-indent: 0em !important;
 }

@@ -42,11 +42,11 @@ export class CourseBuilderComponent implements OnInit {
     this.courseService.create(requestData).subscribe((response) => {
         if (response.status === 200) {
           console.log('Image uploaded successfully');
+          this.router.navigate(['/training-session-builder/' + response.body.id])
         } else {
           console.log('Image not uploaded successfully');
         }
       }
     );
-    this.router.navigate(['/training-session-builder'])
   }
 }

@@ -3,8 +3,8 @@
   <input id="login" [(ngModel)]="credentials.email" class="form-control" type="text"><br>
 
   <label for="password">Пароль</label>
-  <input id="password" [(ngModel)]="credentials.password" class="form-control" type="text"><br>
+  <input id="password" [(ngModel)]="credentials.password" class="form-control" type="password"><br>
 
-  <button class="btn btn-secondary" (click)="login()">Войти</button><br>
-  <button class="btn btn-secondary" routerLink="/registration">Регистрация</button>
+  <button class="btn btn-success" (click)="login()">Войти</button><br>
+  <button class="btn btn-success" routerLink="/registration">Регистрация</button>
 </div>

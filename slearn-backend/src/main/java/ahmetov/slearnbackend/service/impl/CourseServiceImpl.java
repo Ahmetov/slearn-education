@@ -6,6 +6,7 @@ import ahmetov.slearnbackend.model.course.Course;
 import ahmetov.slearnbackend.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -45,6 +46,16 @@ public class CourseServiceImpl implements CourseService {
         } else {
             throw new NotFoundException("Лекции не существует");
         }
+    }
+
+    @Override
+    public void create(Course course, MultipartFile multipartFile) {
+        courseRepository.save(course);
+    }
+
+    @Override
+    public Course createAndReturnId(Course course, MultipartFile multipartFile) {
+        return courseRepository.save(course);
     }
 
     @Override

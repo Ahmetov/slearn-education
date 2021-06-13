@@ -8,18 +8,17 @@
   >Создать курс</a>
 
 
-  <p class="h3 text-left">Мои курсы</p>
-  <div>
+  <p class="h3 text-left">Все курсы</p>
+  <div *ngFor="let c of courses; index as i">
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title"><b>Основы программирования</b></h3>
-        <p class="card-text">Изучите основы программирования играючие основы
-          программирования играючие основы программирования
-          играючие основы программирования играючи</p>
-        <a class="btn btn-success">Просмотр</a>
+        <h3 class="card-title"><b>{{c.name}}</b></h3>
+        <p class="card-text">{{c.description}}</p>
+        <a class="btn btn-success" [routerLink]="['/training-session-view/' + c.id]">Просмотр</a>
+        <a style="margin-left: 10px" (click)="delete(c.id, i)" class="btn btn-success">Удалить</a>
+        <a style="margin-left: 10px" class="btn btn-success" [routerLink]="['/training-session-builder/' + c.id]">Занятия курса</a>
       </div>
     </div>
-
     <br>
   </div>
 

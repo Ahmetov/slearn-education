@@ -1,9 +1,14 @@
 package ahmetov.slearnbackend.model.course;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class TrainingSession {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,7 +16,9 @@ public class TrainingSession {
 
     private String title;
 
-    @OneToMany(mappedBy = "trainingSession")
+    private String description;
+
+    @OneToMany(mappedBy = "trainingSession", orphanRemoval = true)
     private List<TrainingSessionPart> trainingSessionParts;
 
     @ManyToOne

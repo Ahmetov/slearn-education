@@ -1,9 +1,11 @@
 package ahmetov.slearnbackend.model.course;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.util.List;
 
 @Entity
@@ -22,5 +24,6 @@ public class Course {
     private List<CourseCategory> courseCategories;
 
     @OneToMany(mappedBy = "course", orphanRemoval = true)
+    @JsonIgnore
     private List<TrainingSession> modules;
 }

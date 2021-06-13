@@ -1,9 +1,12 @@
 package ahmetov.slearnbackend.web;
 
 import ahmetov.slearnbackend.model.course.Course;
+import ahmetov.slearnbackend.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/course")
@@ -11,11 +14,27 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class CourseController {
 
+    private final CourseService courseService;
+
     @PostMapping(path = "/file", consumes = {"multipart/form-data"})
-    public void saveImage(
+    public Course saveImage(
             @RequestPart("course") Course course,
             @RequestParam(name = "file", required = false) MultipartFile file) {
-        System.out.println("something");
-        System.out.println("something");
+        return courseService.createAndReturnId(course, file);
+    }
+
+    @GetMapping()
+    public List<Course> getAll() {
+        return courseService.getAll();
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        courseService.delete(id);
+    }
+
+    @PutMapping()
+    public void update(@RequestBody Course course) {
+        courseService.update(course);
     }
 }

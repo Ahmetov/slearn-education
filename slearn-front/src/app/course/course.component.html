@@ -1,0 +1,16 @@
+<app-navigation></app-navigation>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Все курсы</h1>
+  <p class="lead">Список доступных курсов портала</p>
+</div>
+
+<p class="h3 text-left">Все курсы</p>
+<div *ngFor="let c of courses; index as i">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title"><b>{{c.name}}</b></h3>
+      <p class="card-text">{{c.description}}</p>
+      <a class="btn btn-success">Пройти</a>
+    </div>
+  </div>
+  <br>

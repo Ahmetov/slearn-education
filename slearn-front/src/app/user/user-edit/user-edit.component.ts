@@ -9,7 +9,7 @@ import {UserService} from "../../service/user.service";
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-  public user: User = {address: "", email: "", firstname: "", lastname: "", phone: ""};
+  public user: User = {email: "", firstname: "", lastname: ""};
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: User, private userService: UserService) {
     this.user = data;

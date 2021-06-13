@@ -14,7 +14,7 @@ import {UserEditComponent} from "./user-edit/user-edit.component";
 export class UserComponent implements OnInit {
 
   public users: User[] = [];
-  public user: User = {address: "", email: "", firstname: "", lastname: "", phone: ""};
+  public user: User = {email: "", firstname: "", lastname: ""};
 
   constructor(private userService: UserService, public dialog: MatDialog) {
   }

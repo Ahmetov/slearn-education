@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Course} from "../model/course";
+import {CourseService} from "../service/course.service";
 
 @Component({
   selector: 'app-course-builder',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-manager.component.css']
 })
 export class CourseManagerComponent implements OnInit {
+  public courses: Course[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private courseService: CourseService) {
   }
 
+  ngOnInit(): void {
+    this.courseService.getAll().subscribe(resp => {
+      this.courses = resp;
+    }, error => {
+      console.log(error)
+    });
+  }
+
+  delete(id: number | undefined, i: number) {
+    if (id != null) {
+      this.courseService.delete(id).subscribe(resp => {
+        this.courses.splice(i, 1);
+      })
+    }
+  }
 }

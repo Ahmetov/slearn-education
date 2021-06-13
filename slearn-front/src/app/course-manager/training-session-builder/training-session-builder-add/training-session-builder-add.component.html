@@ -1,0 +1,21 @@
+<p class="h2">Добавление занятия</p>
+
+<label class="text-left" for="name">Название</label>
+<input [(ngModel)]="trainingSession.name" type="text" class="form-control" id="name" placeholder="Название">
+<label for="description">Описание</label>
+<textarea [(ngModel)]="trainingSession.description" type="text" class="form-control" id="description"
+          placeholder="Описание">
+  </textarea>
+<label for="loadImage">Логотип курса (png)</label>
+<input style="display: none" type="file"
+       (change)="onFileSelected($event)"
+       class="form-control-file"
+       id="loadImage"
+       #fileUpload>
+<br>
+<button mat-mini-fab color="warn" class="upload-btn"
+        (click)="fileUpload.click()">
+  <mat-icon>attach_file</mat-icon>
+</button>
+<br>
+<a (click)="add()" class="btn btn-success">Сохранить</a>

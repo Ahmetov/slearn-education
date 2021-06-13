@@ -20,7 +20,6 @@ export class FileFormatterService {
         type: "application/json"
       }));
     if (fileName !== "") {
-
       uploadImageData.append('file', fileData, fileName);
     }
     return uploadImageData;

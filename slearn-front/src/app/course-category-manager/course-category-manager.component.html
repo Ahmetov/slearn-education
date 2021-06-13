@@ -6,9 +6,9 @@
 
 </div>
 
-<div class="green-back form-group mb-3">
-  <div class="card card-body dark-green-back">
-    <h3 class="display-4">Добавить</h3>
+<div style="margin: 10px" class="form-group mb-3">
+  <div class="card card-body">
+    <p class="h3">Создать категорию</p>
     <hr>
     <label class="text-left" for="name">Название</label>
   <input [(ngModel)]="category.name" type="text" class="form-control" id="name" placeholder="Название">
@@ -22,22 +22,21 @@
 
   </textarea>
     <p>* Перед отправкой убедитесь, что форма верно заполнена</p>
-    <button (click)="save()" id="save" class="btn btn-info">Создать</button>
+    <button (click)="save()" id="save" class="btn btn-success">Создать</button>
     </div>
 </div>
 
 
-<div>
-  <div class="green-back" *ngFor="let c of categories; index as i">
-    <div class="card card-body dark-green-back">
+<div style="margin: 10px">
+  <div style="margin-bottom: 10px" *ngFor="let c of categories; index as i">
+    <div class="card card-body">
     <span><h3>{{c.name}}</h3></span>
       <hr>
       <pre class="text-white">
-{{c.description}}
+      {{c.description}}
       </pre>
       <span style="float: right">
-        <button class="btn btn-danger" style="margin-right: 10px" (click)="delete(c.id, i)">Удалить</button>
-        <button class="btn btn-warning" (click)="update(c.id)">Обновить</button>
+        <button class="btn btn-success" style="margin-right: 10px" (click)="delete(c.id, i)">Удалить</button>
       </span>
     </div>
   </div>

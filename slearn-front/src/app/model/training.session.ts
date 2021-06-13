@@ -3,4 +3,5 @@ export interface TrainingSession {
   name: string;
   description: string;
   image?: File;
+  courseId?: number;
 }

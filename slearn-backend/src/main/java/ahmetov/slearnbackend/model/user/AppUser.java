@@ -1,5 +1,6 @@
 package ahmetov.slearnbackend.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,6 +25,7 @@ public class AppUser implements UserDetails {
     private String phone;
     @Column(unique = true)
     private String email;
+    @JsonIgnore
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade={CascadeType.REMOVE, CascadeType.PERSIST})

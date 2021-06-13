@@ -32,4 +32,8 @@ export class UserService {
   getCurrentUserRoles(): Observable<any>{
     return this.http.get(URL + '/roles')
   }
+
+  getInfo(): Observable<any>{
+    return this.http.get(URL + '/info')
+  }
 }

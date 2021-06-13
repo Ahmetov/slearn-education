@@ -9,4 +9,5 @@ import java.util.List;
 public interface UserService extends BaseService<AppUser, Long>{
     void registration(RegistrationDto registrationDto);
     List<Role> getRolesOfCurrentUser();
+    AppUser getCurrentUserInfo();
 }

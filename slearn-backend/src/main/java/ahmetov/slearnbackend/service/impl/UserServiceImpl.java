@@ -96,4 +96,11 @@ public class UserServiceImpl implements UserService {
         return SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().map(a-> new Role(a.getAuthority()))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public AppUser getCurrentUserInfo() {
+        return (AppUser) SecurityContextHolder
+                .getContext()
+                .getAuthentication().getPrincipal();
+    }
 }

@@ -26,6 +26,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { TrainingSessionBuilderComponent } from './course-manager/training-session-builder/training-session-builder.component';
 import { TrainingSessionContentBuilderComponent } from './course-manager/training-session-content-builder/training-session-content-builder.component';
+import { TrainingSessionBuilderAddComponent } from './course-manager/training-session-builder/training-session-builder-add/training-session-builder-add.component';
+import { TrainingSessionViewComponent } from './course-manager/training-session/training-session-view/training-session-view.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { TrainingSessionContentBuilderComponent } from './course-manager/trainin
     CourseBuilderComponent,
     UserProfileComponent,
     TrainingSessionBuilderComponent,
-    TrainingSessionContentBuilderComponent
+    TrainingSessionContentBuilderComponent,
+    TrainingSessionBuilderAddComponent,
+    TrainingSessionViewComponent,
+    CourseComponent
   ],
     imports: [
         BrowserModule,
