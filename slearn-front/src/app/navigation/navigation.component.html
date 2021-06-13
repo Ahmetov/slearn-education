@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/lectures']">SLearn</a>
+    <a class="navbar-brand" [routerLink]="['/courses']">SLearn</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,10 +11,7 @@
           <a class="nav-link" aria-current="page" [routerLink]="['/courses']">Курсы</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" [routerLink]="['/lectures']">Лекции</a>
-        </li>
-        <li *ngIf="isAdmin" class="nav-item">
-          <a class="nav-link" [routerLink]="['/lectures/manage']">Управление лекциями</a>
+          <a class="nav-link" aria-current="page">|</a>
         </li>
         <li *ngIf="isAdmin" class="nav-item">
           <a class="nav-link" [routerLink]="['/users']">Управление пользователями</a>

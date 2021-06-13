@@ -16,6 +16,8 @@ import {LectureViewDetailsComponent} from "./lecture/lecture-view/lecture-view-d
 import {LectureViewComponent} from "./lecture/lecture-view/lecture-view.component";
 import {LectureComponent} from "./lecture/lecture.component";
 import {LectureEditComponent} from "./lecture/lecture-edit/lecture-edit.component";
+import {TrainingSessionComponent} from "./course/training-session/training-session.component";
+import {TrainingSessionContentComponent} from "./course/training-session-content/training-session-content.component";
 
 const routes: Routes = [
   {path: 'login', component: AuthComponent},
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path: 'lectures/manage', component: LectureComponent, canActivate: [AuthGuardService]},
   {path: 'lectures/manage/:id', component: LectureEditComponent, canActivate: [AuthGuardService]},
   {path: 'courses', component: CourseComponent, canActivate: [AuthGuardService]},
+  {path: 'courses/:id', component: TrainingSessionComponent, canActivate: [AuthGuardService]},
+  {path: 'training/:id', component: TrainingSessionContentComponent, canActivate: [AuthGuardService]},
   {path: 'users', component: UserComponent, canActivate: [AuthGuardService]},
   {path: 'lectures', component: LectureViewComponent, canActivate: [AuthGuardService]},
   {path: 'lectures/:id', component: LectureViewDetailsComponent, canActivate: [AuthGuardService]},

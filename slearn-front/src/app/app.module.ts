@@ -29,6 +29,8 @@ import { TrainingSessionContentBuilderComponent } from './course-manager/trainin
 import { TrainingSessionBuilderAddComponent } from './course-manager/training-session-builder/training-session-builder-add/training-session-builder-add.component';
 import { TrainingSessionViewComponent } from './course-manager/training-session/training-session-view/training-session-view.component';
 import { CourseComponent } from './course/course.component';
+import { TrainingSessionComponent } from './course/training-session/training-session.component';
+import { TrainingSessionContentComponent } from './course/training-session-content/training-session-content.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { CourseComponent } from './course/course.component';
     TrainingSessionContentBuilderComponent,
     TrainingSessionBuilderAddComponent,
     TrainingSessionViewComponent,
-    CourseComponent
+    CourseComponent,
+    TrainingSessionComponent,
+    TrainingSessionContentComponent
   ],
     imports: [
         BrowserModule,

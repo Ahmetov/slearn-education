@@ -16,7 +16,7 @@
         <p class="card-text">{{c.description}}</p>
         <a class="btn btn-success" [routerLink]="['/training-session-view/' + c.id]">Просмотр</a>
         <a style="margin-left: 10px" (click)="delete(c.id, i)" class="btn btn-success">Удалить</a>
-        <a style="margin-left: 10px" class="btn btn-success" [routerLink]="['/training-session-builder/' + c.id]">Занятия курса</a>
+        <a style="margin-left: 10px" class="btn btn-success" [routerLink]="['/training-session-builder/' + c.id]">Добавить занятие</a>
       </div>
     </div>
     <br>

@@ -10,7 +10,7 @@
     <div class="card-body">
       <h3 class="card-title"><b>{{c.name}}</b></h3>
       <p class="card-text">{{c.description}}</p>
-      <a class="btn btn-success">Пройти</a>
+      <a class="btn btn-success" [routerLink]="['/courses/' + c.id]">Пройти</a>
     </div>
   </div>
   <br>

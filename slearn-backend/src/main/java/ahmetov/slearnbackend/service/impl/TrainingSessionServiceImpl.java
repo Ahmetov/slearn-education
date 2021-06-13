@@ -27,7 +27,7 @@ public class TrainingSessionServiceImpl implements TrainingSessionService {
     public TrainingSession getById(Long id) {
         return trainingSessionRepository
                 .findById(id)
-                .orElseThrow(() -> new NotFoundException("Курс не найден"));
+                .orElseThrow(() -> new NotFoundException("Занятие не найдено"));
     }
 
     @Override
