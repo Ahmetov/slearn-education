@@ -7,11 +7,11 @@
 
 <div class="form-group mb-3 card card-body green-back">
   <label class="text-left" for="name">Название</label>
-  <input [(ngModel)]="trainingSession.name" type="text" class="form-control" id="name" placeholder="Название">
+  <input [(ngModel)]="trainingSession.title" type="text" class="form-control" id="name" placeholder="Название">
   <label for="description">Описание</label>
   <textarea [(ngModel)]="trainingSession.description" type="text" class="form-control" id="description" placeholder="Описание">
   </textarea>
-  <label for="loadImage">Логотип курса (png)</label>
+  <label for="loadImage">Логотип модуля (png 50x50)</label>
   <input style="display: none" type="file"
          (change)="onFileSelected($event)"
          class="form-control-file"
@@ -29,11 +29,9 @@
 <div style="margin: 10px">
   <div style="margin-bottom: 10px" *ngFor="let t of trainingSessions; index as i">
     <div class="card card-body">
-      <span><h3>{{t.name}}</h3></span>
+      <span><h3>{{t.title}}</h3></span>
       <hr>
-      <pre class="text-white">
-      {{t.description}}
-      </pre>
+      <pre>{{t.description}}</pre>
       <span style="float: right">
         <button class="btn btn-success" style="margin-right: 10px" (click)="delete(t.id, i)">Удалить</button>
       </span>

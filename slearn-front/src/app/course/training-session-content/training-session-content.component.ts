@@ -23,6 +23,13 @@ export class TrainingSessionContentComponent implements OnInit {
   ngOnInit(): void {
     this.trainingContentService.getByTrainingSessionId(this.id).subscribe(resp => {
       this.trainingSessionContents = resp;
+      resp.forEach((d: any) => {
+        let training = d;
+        if (d.image != null) {
+          let retrieveResonse = d.image;
+          training.image = 'data:image/jpg;base64,' + retrieveResonse;
+        }
+      });
     })
   }
 

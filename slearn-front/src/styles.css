@@ -113,4 +113,9 @@ pre {
   font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
   color: black !important;
   text-indent: 0em !important;
+  white-space: pre-wrap;
+}
+
+.content-article {
+  max-width: 100% !important;
 }

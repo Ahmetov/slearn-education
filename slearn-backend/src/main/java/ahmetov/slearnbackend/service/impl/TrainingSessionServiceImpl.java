@@ -55,6 +55,11 @@ public class TrainingSessionServiceImpl implements TrainingSessionService {
     }
 
     @Override
+    public TrainingSession createAndReturnId(TrainingSession trainingSession, MultipartFile multipartFile) {
+        return trainingSessionRepository.save(trainingSession);
+    }
+
+    @Override
     public void create(TrainingSession trainingSession, MultipartFile multipartFile) {
         trainingSessionRepository.save(trainingSession);
     }

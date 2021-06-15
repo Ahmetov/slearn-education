@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'training-session-builder/:id', component: TrainingSessionBuilderComponent, canActivate: [AuthGuardService]},
   {path: 'training-session-view/:id', component: TrainingSessionViewComponent, canActivate: [AuthGuardService]},
   {path: 'training-session-content-builder/:id', component: TrainingSessionContentBuilderComponent, canActivate: [AuthGuardService]},
-  {path: '**', redirectTo: 'lectures', pathMatch: 'full'}
+  {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ]
 
 @NgModule({

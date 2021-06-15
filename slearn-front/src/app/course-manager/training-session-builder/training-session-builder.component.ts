@@ -14,7 +14,7 @@ import {FileFormatterService} from "../../service/file-formatter.service";
 })
 
 export class TrainingSessionBuilderComponent implements OnInit {
-  public trainingSession: TrainingSession = {description: "", name: ""};
+  public trainingSession: TrainingSession = {description: "", title: ""};
   public trainingSessions: TrainingSession[] = [];
   public id: number;
 
@@ -32,7 +32,9 @@ export class TrainingSessionBuilderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.trainingService.getByCourseId(this.id).subscribe(resp => {
+      this.trainingSessions = resp;
+    })
   }
 
   onFileSelected(event: any) {

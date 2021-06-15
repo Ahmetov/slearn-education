@@ -4,12 +4,13 @@
   <p class="lead">Создайте учебные занятий вашего курса</p>
 </div>
 <div class="form-group mb-3 card card-body green-back">
-  <label class="text-left" for="name">Введение</label>
-  <textarea type="text" class="form-control" id="intro" placeholder="Введение"></textarea>
   <label class="text-left" for="name">Подзаголовок</label>
-  <input [(ngModel)]="trainingSessionContent.subtitle" type="text" class="form-control" id="name" placeholder="Название">
+  <input [(ngModel)]="trainingSessionContent.subtitle" type="text" class="form-control" id="name" placeholder="Подзаголовок">
   <label for="description">Текст</label>
-  <textarea [(ngModel)]="trainingSessionContent.content" type="text" class="form-control" id="description" placeholder="Описание">
+  <textarea [(ngModel)]="trainingSessionContent.content" type="text"
+            class="form-control" id="description"
+            rows="10"
+            placeholder="Текст">
   </textarea>
   <label for="loadImage">Добавить изображение (png)</label>
   <input style="display: none" type="file"
@@ -17,41 +18,19 @@
          class="form-control-file"
          id="loadImage"
          #fileUpload>
-  <button mat-mini-fab color="warn" class="upload-btn"
+  <button style="margin-bottom: 10px" mat-mini-fab color="warn" class="upload-btn"
           (click)="fileUpload.click()">
     <mat-icon>attach_file</mat-icon>
   </button>
+  <a (click)="add()" class="btn btn-success">Добавить</a>
+</div>
 
-  <label class="text-left" for="name">Подзаголовок</label>
-  <input [(ngModel)]="trainingSessionContent.subtitle" type="text" class="form-control" id="name" placeholder="Название">
-  <label for="description">Текст</label>
-  <textarea [(ngModel)]="trainingSessionContent.content" type="text" class="form-control" id="description" placeholder="Описание">
-  </textarea>
-  <label for="loadImage">Добавить изображение (png)</label>
-  <input style="display: none" type="file"
-         (change)="onFileSelected($event)"
-         class="form-control-file"
-         id="loadImage"
-         #fileUpload>
-  <button mat-mini-fab color="warn" class="upload-btn"
-          (click)="fileUpload.click()">
-    <mat-icon>attach_file</mat-icon>
-  </button>
-
-  <label class="text-left" for="name">Подзаголовок</label>
-  <input [(ngModel)]="trainingSessionContent.subtitle" type="text" class="form-control" id="name" placeholder="Название">
-  <label for="description">Текст</label>
-  <textarea [(ngModel)]="trainingSessionContent.content" type="text" class="form-control" id="description" placeholder="Описание">
-  </textarea>
-  <label for="loadImage">Добавить изображение (png)</label>
-  <input style="display: none" type="file"
-         (change)="onFileSelected($event)"
-         class="form-control-file"
-         id="loadImage"
-         #fileUpload>
-  <button mat-mini-fab color="warn" class="upload-btn"
-          (click)="fileUpload.click()">
-    <mat-icon>attach_file</mat-icon>
-  </button>
-  <a (click)="saveAndNext()" class="btn btn-success">Далее</a>
+<div class="article">
+  <div *ngFor="let t of trainingSessionContents" class="col-sm-6 content-article">
+    <p class="h1">{{t.subtitle}}</p><br>
+    <img *ngIf="t.image" [src]="t.image"
+         alt="">
+    <br>
+    <pre class="h6">{{t.content}}</pre>
+  </div>
 </div>

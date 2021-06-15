@@ -10,7 +10,7 @@ import {TrainingSession} from "../../../model/training.session";
 })
 export class TrainingSessionBuilderAddComponent implements OnInit {
 
-  public trainingSession: TrainingSession = {description: "", name: ""};
+  public trainingSession: TrainingSession = {description: "", title: ""};
   private selectedFile: any;
   private fileName: any;
 

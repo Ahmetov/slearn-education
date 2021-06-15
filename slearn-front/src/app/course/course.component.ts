@@ -16,6 +16,13 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
     this.courseService.getAll().subscribe(resp => {
       this.courses = resp;
+      resp.forEach((d: any) => {
+        let course = d;
+        if (d.image != null) {
+          let retrieveResonse = d.image.data;
+          course.image = 'data:image/jpg;base64,' + retrieveResonse;
+        }
+      });
     }, error => {
       console.log(error)
     });

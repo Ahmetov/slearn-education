@@ -1,6 +1,6 @@
 export interface TrainingSession {
   id?: number;
-  name: string;
+  title: string;
   description: string;
   image?: File;
   courseId?: number;

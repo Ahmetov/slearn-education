@@ -4,10 +4,12 @@
 </div>
 
 <div class="article">
-  <div *ngFor="let t of trainingSessionContent" class="col-sm-6">
-    <p class="h1">{{t.name}}</p><br>
-    <p class="h3 text-muted">{{t.description}}</p>
+  <div *ngFor="let t of trainingSessionContents" class="col-sm-6 content-article">
+    <p class="h1">{{t.subtitle}}</p><br>
     <br>
-    <p class="h6">{{t.content}}</p>
+    <img *ngIf="t.image" [src]="t.image"
+         alt="">
+    <br>
+    <pre class="h6">{{t.content}}</pre>
   </div>
 </div>

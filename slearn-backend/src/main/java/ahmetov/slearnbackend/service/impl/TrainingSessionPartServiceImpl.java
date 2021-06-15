@@ -5,7 +5,6 @@ import ahmetov.slearnbackend.exception.NotFoundException;
 import ahmetov.slearnbackend.model.course.TrainingSession;
 import ahmetov.slearnbackend.model.course.TrainingSessionPart;
 import ahmetov.slearnbackend.service.TrainingSessionPartService;
-import ahmetov.slearnbackend.service.TrainingSessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

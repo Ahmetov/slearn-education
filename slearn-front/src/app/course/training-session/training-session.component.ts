@@ -22,5 +22,4 @@ export class TrainingSessionComponent implements OnInit {
       this.trainingSessions = resp;
     })
   }
-
 }

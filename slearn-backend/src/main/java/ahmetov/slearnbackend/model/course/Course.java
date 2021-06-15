@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Blob;
 import java.util.List;
 
 @Entity
@@ -26,4 +25,7 @@ public class Course {
     @OneToMany(mappedBy = "course", orphanRemoval = true)
     @JsonIgnore
     private List<TrainingSession> modules;
+
+    @OneToOne(mappedBy = "course", orphanRemoval = true)
+    private FileDB image;
 }

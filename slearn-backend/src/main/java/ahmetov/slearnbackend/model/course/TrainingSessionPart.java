@@ -15,9 +15,11 @@ public class TrainingSessionPart {
 
     private String subtitle;
 
+    @Column(columnDefinition = "text")
     private String content;
 
-    private String image;
+    @Lob
+    private byte[] image;
 
     @ManyToOne
     @JoinColumn(nullable = false, name = "training_session_id")

@@ -34,7 +34,7 @@ export class TrainingSessionContentService {
   }
 
   getByTrainingSessionId(id: number): Observable<any> {
-    return this.http.get(URL + `/trainings-session/${id}`);
+    return this.http.get(URL + `/training-session/${id}`);
   }
 
   update(trainingSession: TrainingSession): Observable<any> {

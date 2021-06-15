@@ -20,7 +20,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
-      this.router.navigate(['lectures'])
+      this.router.navigate(['courses'])
     }
   }
 
@@ -29,7 +29,7 @@ export class AuthComponent implements OnInit {
       .subscribe(response => {
         this.tokenService.saveToken(response.jwt);
         this.tokenService.saveUser(response);
-        this.router.navigate(['/lectures']);
+        this.router.navigate(['/courses']);
         window.location.reload();
       }, error => {
         console.log(error)

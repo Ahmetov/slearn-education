@@ -3,4 +3,5 @@ export interface TrainingSessionContent {
   subtitle: string;
   content: string;
   image?: File;
+  trainingId?: number;
 }

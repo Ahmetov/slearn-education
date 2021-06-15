@@ -1,5 +1,6 @@
 package ahmetov.slearnbackend.model.course;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class TrainingSession {
     private String description;
 
     @OneToMany(mappedBy = "trainingSession", orphanRemoval = true)
+    @JsonIgnore
     private List<TrainingSessionPart> trainingSessionParts;
 
     @ManyToOne

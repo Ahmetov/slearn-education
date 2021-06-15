@@ -9,7 +9,7 @@
 <div *ngFor="let t of trainingSessions; index as i">
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title"><b>{{t.name}}</b></h3>
+      <h3 class="card-title"><b>{{t.title}}</b></h3>
       <p class="card-text">{{t.description}}</p>
       <a class="btn btn-success" [routerLink]="['/training-session-content-builder/' + t.id]">Редактировать контент</a>
       <a style="margin-left: 10px" class="btn btn-success" (click)="delete(t.id, i)">Удалить</a>

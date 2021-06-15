@@ -9,5 +9,8 @@ import java.util.List;
 
 public interface TrainingSessionService extends BaseService<TrainingSession, Long> {
     void create(TrainingSession trainingSession, MultipartFile multipartFile);
+
     List<TrainingSession> getByCourseId(Long id);
+
+    TrainingSession createAndReturnId(TrainingSession trainingSession, MultipartFile multipartFile);
 }

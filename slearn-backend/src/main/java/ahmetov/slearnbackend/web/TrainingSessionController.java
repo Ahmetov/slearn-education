@@ -21,7 +21,7 @@ public class TrainingSessionController {
     private final CourseRepository courseRepository;
 
     @PostMapping(path = "/file", consumes = {"multipart/form-data"})
-    public void saveImage(
+    public TrainingSession saveImage(
             @RequestPart("trainingSession") TrainingSessionDto trainingSessionDto,
             @RequestParam(name = "file", required = false) MultipartFile file) {
         TrainingSession trainingSession = new TrainingSession();
@@ -29,7 +29,7 @@ public class TrainingSessionController {
         trainingSession.setDescription(trainingSessionDto.getDescription());
         Optional<Course> byId = courseRepository.findById(trainingSessionDto.getCourseId());
         trainingSession.setCourse(byId.get());
-        trainingSessionService.create(trainingSession, file);
+        return trainingSessionService.createAndReturnId(trainingSession, file);
     }
 
     @GetMapping("/course/{id}")

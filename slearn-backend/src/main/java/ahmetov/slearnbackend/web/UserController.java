@@ -46,7 +46,6 @@ public class UserController {
     }
 
     @PutMapping()
-    @PreAuthorize("hasAuthority('admin')")
     public void update(@RequestBody AppUser appUser) {
         userService.update(appUser);
     }

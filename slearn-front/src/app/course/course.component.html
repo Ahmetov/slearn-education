@@ -8,7 +8,10 @@
 <div *ngFor="let c of courses; index as i">
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title"><b>{{c.name}}</b></h3>
+      <h3 class="card-title"><img [src]="c.image" width="50px" height="50px"
+                                  alt=""><b>
+        {{c.name}}</b>
+      </h3>
       <p class="card-text">{{c.description}}</p>
       <a class="btn btn-success" [routerLink]="['/courses/' + c.id]">Пройти</a>
     </div>

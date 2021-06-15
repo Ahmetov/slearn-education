@@ -31,6 +31,7 @@ import { TrainingSessionViewComponent } from './course-manager/training-session/
 import { CourseComponent } from './course/course.component';
 import { TrainingSessionComponent } from './course/training-session/training-session.component';
 import { TrainingSessionContentComponent } from './course/training-session-content/training-session-content.component';
+import { UserProfileEditComponent } from './user-profile/user-profile-edit/user-profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TrainingSessionContentComponent } from './course/training-session-conte
     TrainingSessionViewComponent,
     CourseComponent,
     TrainingSessionComponent,
-    TrainingSessionContentComponent
+    TrainingSessionContentComponent,
+    UserProfileEditComponent
   ],
     imports: [
         BrowserModule,
