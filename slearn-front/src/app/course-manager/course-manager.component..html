@@ -3,25 +3,26 @@
   <h1 class="display-4">Конструктор курса</h1>
   <p class="lead">Создайте игровой курс, заполнив все необходимые формы</p>
 </div>
-  <a class="btn btn-success float-right"
-     [routerLink]="['/course-builder']"
-  >Создать курс</a>
+<a class="btn btn-success float-right"
+   [routerLink]="['/course-builder']"
+>Создать курс</a>
 
 
-  <p class="h3 text-left">Все курсы</p>
-  <div *ngFor="let c of courses; index as i">
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">
-          <img [src]="c.image" width="50px" height="50px"
-                                    alt="">
-          <b>{{c.name}}</b></h3>
-        <p class="card-text">{{c.description}}</p>
-        <a class="btn btn-success" [routerLink]="['/training-session-view/' + c.id]">Просмотр</a>
-        <a style="margin-left: 10px" (click)="delete(c.id, i)" class="btn btn-success">Удалить</a>
-        <a style="margin-left: 10px" class="btn btn-success" [routerLink]="['/training-session-builder/' + c.id]">Добавить занятие</a>
-      </div>
+<p class="h3 text-left">Все курсы</p>
+<div *ngFor="let c of courses; index as i">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">
+        <img [src]="c.image" width="50px" height="50px"
+             alt="">
+        <b>{{c.name}}</b></h3>
+      <p class="card-text">{{c.description}}</p>
+      <a class="btn btn-success" [routerLink]="['/training-session-view/' + c.id]">Управление занятиями</a>
+      <a style="margin-left: 10px" (click)="delete(c.id, i)" class="btn btn-success">Удалить</a>
+      <a style="margin-left: 10px" class="btn btn-success" [routerLink]="['/training-session-builder/' + c.id]">Добавить
+        занятие</a>
     </div>
-    <br>
   </div>
+  <br>
+</div>
 

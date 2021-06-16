@@ -35,6 +35,11 @@ nav {
   margin: 20px;
 }
 
+.form-check-input:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
 .dark-green-back {
   background: #28a745;
   color: whitesmoke;
@@ -61,6 +66,12 @@ nav {
   font-weight: bold;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 /* Style buttons */
 .profile-btn {
@@ -118,4 +129,9 @@ pre {
 
 .content-article {
   max-width: 100% !important;
+}
+
+img {
+  max-width: 1200px;
+  max-height: 1200px;
 }

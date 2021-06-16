@@ -32,6 +32,9 @@ import { CourseComponent } from './course/course.component';
 import { TrainingSessionComponent } from './course/training-session/training-session.component';
 import { TrainingSessionContentComponent } from './course/training-session-content/training-session-content.component';
 import { UserProfileEditComponent } from './user-profile/user-profile-edit/user-profile-edit.component';
+import { TestBuilderComponent } from './course-manager/test-builder/test-builder.component';
+import { TestComponent } from './course/test/test.component';
+import { EnemySayModalComponent } from './course/test/enemy-say-modal/enemy-say-modal.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { UserProfileEditComponent } from './user-profile/user-profile-edit/user-
     CourseComponent,
     TrainingSessionComponent,
     TrainingSessionContentComponent,
-    UserProfileEditComponent
+    UserProfileEditComponent,
+    TestBuilderComponent,
+    TestComponent,
+    EnemySayModalComponent
   ],
     imports: [
         BrowserModule,

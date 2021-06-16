@@ -3,6 +3,7 @@ import {TrainingSessionContent} from "../../model/training.session.content";
 import {TrainingSessionContentService} from "../../service/training-session-content.service";
 import {ActivatedRoute} from "@angular/router";
 import {FileFormatterService} from "../../service/file-formatter.service";
+import {TrainingSessionService} from "../../service/training-session.service";
 
 @Component({
   selector: 'app-training-session-content-builder',
@@ -19,6 +20,7 @@ export class TrainingSessionContentBuilderComponent implements OnInit {
   private selectedFile: any = {};
 
   constructor(private trainingContentService: TrainingSessionContentService,
+              private trainingSessionService: TrainingSessionService,
               private fileService: FileFormatterService,
               private activateRoute: ActivatedRoute) {
     this.id = activateRoute.snapshot.params['id'];
@@ -45,13 +47,18 @@ export class TrainingSessionContentBuilderComponent implements OnInit {
     }
   }
 
+  remove() {
+    this.trainingSessionService.clear(this.id).subscribe(resp => {
+      this.trainingSessionContents = [];
+    });
+  }
+
   add(): void {
     const requestData = this.fileService.generateFormData(
       'trainingSessionPart',
       this.trainingSessionContent,
       this.selectedFile,
       this.fileName);
-
     this.trainingContentService.create(requestData).subscribe((response) => {
       if (response.status === 200) {
         this.trainingSessionContents.push(Object.assign({}, this.trainingSessionContent));

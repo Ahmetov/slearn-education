@@ -4,12 +4,16 @@
   <p class="lead">Все занятия курса</p>
 </div>
 
-<div *ngFor="let t of trainingSessions; index as i">
-  <div class="card">
-    <div class="card-body">
-      <h3 class="card-title"><b>{{t.title}}</b></h3>
-      <p class="card-text">{{t.description}}</p>
-      <a class="btn btn-success" [routerLink]="['/training/' + t.id]">Посмотреть</a>
+<div style="margin: 10px">
+  <div style="margin-bottom: 10px" *ngFor="let t of trainingSessions; index as i">
+    <div class="card card-body">
+      <span><h3><b>{{t.title}}</b></h3></span>
+      <hr>
+      <pre>{{t.description}}</pre>
+      <span style="float: right">
+      <a class="btn btn-success" style="margin-right: 10px" [routerLink]="['/training/' + t.id]">Посмотреть</a>
+      <a class="btn btn-success" [routerLink]="['/training-session/' + t.id + '/test']">Пройти тестирование</a>
+      </span>
     </div>
   </div>
   <br>

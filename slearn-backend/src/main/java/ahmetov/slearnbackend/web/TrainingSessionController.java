@@ -1,6 +1,8 @@
 package ahmetov.slearnbackend.web;
 
 import ahmetov.slearnbackend.dao.CourseRepository;
+import ahmetov.slearnbackend.dao.TrainingSessionPartRepository;
+import ahmetov.slearnbackend.dao.TrainingSessionRepository;
 import ahmetov.slearnbackend.model.course.Course;
 import ahmetov.slearnbackend.model.course.TrainingSession;
 import ahmetov.slearnbackend.model.dto.TrainingSessionDto;
@@ -9,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,13 +22,15 @@ import java.util.Optional;
 public class TrainingSessionController {
     private final TrainingSessionService trainingSessionService;
     private final CourseRepository courseRepository;
+    private final TrainingSessionRepository trainingSessionRepository;
+    private final TrainingSessionPartRepository trainingSessionPartRepository;
 
     @PostMapping(path = "/file", consumes = {"multipart/form-data"})
     public TrainingSession saveImage(
             @RequestPart("trainingSession") TrainingSessionDto trainingSessionDto,
             @RequestParam(name = "file", required = false) MultipartFile file) {
         TrainingSession trainingSession = new TrainingSession();
-        trainingSession.setTitle(trainingSessionDto.getName());
+        trainingSession.setTitle(trainingSessionDto.getTitle());
         trainingSession.setDescription(trainingSessionDto.getDescription());
         Optional<Course> byId = courseRepository.findById(trainingSessionDto.getCourseId());
         trainingSession.setCourse(byId.get());
@@ -50,5 +55,12 @@ public class TrainingSessionController {
     @PutMapping()
     public void update(@RequestBody TrainingSession trainingSession) {
         trainingSessionService.update(trainingSession);
+    }
+
+    @PostMapping("/clean/{id}")
+    @Transactional
+    public void clean(@PathVariable Long id) {
+        TrainingSession byId = trainingSessionRepository.findById(id).get();
+        trainingSessionPartRepository.deleteAll(byId.getTrainingSessionParts());
     }
 }

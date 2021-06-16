@@ -9,21 +9,10 @@
   <label class="text-left" for="name">Название</label>
   <input [(ngModel)]="trainingSession.title" type="text" class="form-control" id="name" placeholder="Название">
   <label for="description">Описание</label>
-  <textarea [(ngModel)]="trainingSession.description" type="text" class="form-control" id="description" placeholder="Описание">
+  <textarea style="margin-bottom: 10px" [(ngModel)]="trainingSession.description" type="text" class="form-control" id="description" placeholder="Описание">
   </textarea>
-  <label for="loadImage">Логотип модуля (png 50x50)</label>
-  <input style="display: none" type="file"
-         (change)="onFileSelected($event)"
-         class="form-control-file"
-         id="loadImage"
-         #fileUpload>
-  <button mat-mini-fab color="warn" style="margin-bottom: 10px" class="upload-btn"
-          (click)="fileUpload.click()">
-    <mat-icon>attach_file</mat-icon>
-  </button>
   <a (click)="add()" class="btn btn-success" style="margin-bottom: 10px">Добавить</a>
   <a class="btn btn-success" [routerLink]="['/training-session-view/' + id]">Далее</a>
-
 </div>
 
 <div style="margin: 10px">

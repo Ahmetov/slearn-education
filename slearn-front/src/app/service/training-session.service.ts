@@ -29,6 +29,10 @@ export class TrainingSessionService {
     return this.http.delete(URL + `/${id}`);
   }
 
+  clear(id: number): Observable<any> {
+    return this.http.post(URL + `/clean/${id}`, null);
+  }
+
   getById(id: number): Observable<any> {
     return this.http.get(URL + `/${id}`);
   }

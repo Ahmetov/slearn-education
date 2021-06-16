@@ -11,7 +11,8 @@
     <div class="card-body">
       <h3 class="card-title"><b>{{t.title}}</b></h3>
       <p class="card-text">{{t.description}}</p>
-      <a class="btn btn-success" [routerLink]="['/training-session-content-builder/' + t.id]">Редактировать контент</a>
+      <a class="btn btn-success" [routerLink]="['/training-session-content-builder/' + t.id]">Управление контентом</a>
+      <a style="margin-left: 10px" class="btn btn-success" [routerLink]="['/training-session/' + t.id + '/test-builder']">Управление тестированиями</a>
       <a style="margin-left: 10px" class="btn btn-success" (click)="delete(t.id, i)">Удалить</a>
     </div>
   </div>

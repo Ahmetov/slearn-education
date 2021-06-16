@@ -1,0 +1,36 @@
+<app-navigation></app-navigation>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Управление тестированиями</h1>
+  <p class="lead">Добавляйте тестирования и достижения за их прохождение</p>
+</div>
+
+<div class="form-group mb-3 card card-body green-back">
+  <p class="h3">Противник <a style="float: right" class="btn btn-success" (click)="save()">Сохранить</a></p>
+  <label for="loadImage">Изображение противника (png)</label>
+  <input style="display: none" type="file"
+         (change)="onFileSelected($event)"
+         class="form-control-file"
+         id="loadImage"
+         #fileUpload>
+  <button style="margin-bottom: 10px" mat-mini-fab color="warn" class="upload-btn"
+          (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+  <label for="talk">Слова противника</label>
+  <textarea style="margin-bottom: 10px" type="text"
+            class="form-control" id="talk" placeholder="Слова противника"></textarea>
+  <hr>
+  <p class="h3">Тесты</p>
+  <label for="question">Вопрос</label>
+  <textarea style="margin-bottom: 10px" type="text"
+            class="form-control" id="question" placeholder="Вопрос"></textarea>
+  <label class="text-left" for="right">Верный вариант ответа</label>
+  <input  type="text" class="form-control" id="right" placeholder="Верный вариант ответа">
+  <label class="text-left" for="wrong2">Неверный вариант ответа</label>
+  <input  type="text" class="form-control" id="wrong2" placeholder="Неверный вариант ответа">
+  <label class="text-left" for="wrong3">Неверный вариант ответа</label>
+  <input  type="text" class="form-control" id="wrong3" placeholder="Неверный вариант ответа">
+  <label class="text-left" for="wrong4">Неверный вариант ответа</label>
+  <input  type="text" class="form-control" id="wrong4" placeholder="Неверный вариант ответа">
+  <a class="btn btn-success" style="margin-top: 10px; margin-bottom: 10px">Добавить</a>
+</div>

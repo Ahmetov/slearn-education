@@ -18,6 +18,8 @@ import {LectureComponent} from "./lecture/lecture.component";
 import {LectureEditComponent} from "./lecture/lecture-edit/lecture-edit.component";
 import {TrainingSessionComponent} from "./course/training-session/training-session.component";
 import {TrainingSessionContentComponent} from "./course/training-session-content/training-session-content.component";
+import {TestBuilderComponent} from "./course-manager/test-builder/test-builder.component";
+import {TestComponent} from "./course/test/test.component";
 
 const routes: Routes = [
   {path: 'login', component: AuthComponent},
@@ -37,6 +39,8 @@ const routes: Routes = [
   {path: 'training-session-builder/:id', component: TrainingSessionBuilderComponent, canActivate: [AuthGuardService]},
   {path: 'training-session-view/:id', component: TrainingSessionViewComponent, canActivate: [AuthGuardService]},
   {path: 'training-session-content-builder/:id', component: TrainingSessionContentBuilderComponent, canActivate: [AuthGuardService]},
+  {path: 'training-session/:id/test-builder', component: TestBuilderComponent, canActivate: [AuthGuardService]},
+  {path: 'training-session/:id/test', component: TestComponent, canActivate: [AuthGuardService]},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ]
 

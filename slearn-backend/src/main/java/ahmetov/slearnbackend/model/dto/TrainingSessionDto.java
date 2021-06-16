@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TrainingSessionDto {
-    private String name;
+    private String title;
 
     private String description;
 
